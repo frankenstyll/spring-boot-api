@@ -1,0 +1,1330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.11.0.final using JasperReports Library version 6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="InvoiceEmailAttach" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2e94c229-7d57-409e-8961-da39db60964b">
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="267"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="719"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="subReport2_sum" class="net.sf.jasperreports.engine.JasperReport"/>
+	<parameter name="loanTypeName" class="java.lang.String"/>
+	<parameter name="cid" class="java.lang.String"/>
+	<parameter name="principleDue" class="java.lang.String"/>
+	<parameter name="nextYear" class="java.lang.String"/>
+	<parameter name="nextBillDate" class="java.lang.String"/>
+	<parameter name="nextDuePrin" class="java.lang.String"/>
+	<parameter name="billDate" class="java.lang.String"/>
+	<parameter name="stuName" class="java.lang.String"/>
+	<parameter name="accNo" class="java.lang.String"/>
+	<parameter name="billAmount" class="java.lang.String"/>
+	<parameter name="barcode" class="java.lang.String"/>
+	<parameter name="lastPaymentDate" class="java.lang.String"/>
+	<parameter name="totalAmt" class="java.lang.String"/>
+	<parameter name="balanceAmt" class="java.lang.String"/>
+	<parameter name="tranDate" class="java.lang.String"/>
+	<parameter name="balanceBillAmt" class="java.lang.String"/>
+	<parameter name="newInterest" class="java.lang.String"/>
+	<parameter name="newLateCharge" class="java.lang.String"/>
+	<parameter name="fee" class="java.lang.String"/>
+	<parameter name="nextDueInt" class="java.lang.String"/>
+	<parameter name="payPerMonth" class="java.lang.String"/>
+	<parameter name="totalPayPerMonth" class="java.lang.String"/>
+	<parameter name="contextPath" class="java.lang.String"/>
+	<parameter name="logo" class="java.awt.Image"/>
+	<parameter name="qr" class="java.awt.Image"/>
+	<parameter name="qrpay" class="java.awt.Image"/>
+	<parameter name="ktbIcon" class="java.awt.Image"/>
+	<parameter name="thailandpostIcon" class="java.awt.Image"/>
+	<parameter name="sevenEveIcon" class="java.awt.Image"/>
+	<parameter name="counterserviceIcon" class="java.awt.Image"/>
+	<parameter name="bayIcon" class="java.awt.Image"/>
+	<parameter name="bkbIcon" class="java.awt.Image"/>
+	<parameter name="tmbIcon" class="java.awt.Image"/>
+	<parameter name="lhIcon" class="java.awt.Image"/>
+	<parameter name="scbIcon" class="java.awt.Image"/>
+	<parameter name="baacIcon" class="java.awt.Image"/>
+	<parameter name="kbankIcon" class="java.awt.Image"/>
+	<parameter name="ktbnetbankQrPay" class="java.awt.Image"/>
+	<parameter name="qrtext" class="java.lang.String"/>
+	<parameter name="bigcIcon" class="java.awt.Image"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<detail>
+		<band height="802" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement x="492" y="0" width="62" height="20" uuid="256fa02b-1105-4088-954e-81d244b6b958"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="THSarabunPSK" size="12"/>
+				</textElement>
+				<text><![CDATA[(สำหรับลูกค้า)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="330" y="20" width="224" height="20" uuid="333548a5-30ca-41c5-a556-2f4f57f99047"/>
+				<textElement>
+					<font fontName="THSarabunPSK" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA["สรุปรายการบัญชีเงินกู้ - " + $P{loanTypeName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="60" y="20" width="270" height="20" uuid="00fb2ca9-2913-4fa3-bfd4-242a16444b0b"/>
+				<textElement>
+					<font fontName="THSarabunPSK" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA["ใบแจ้งหนี้ เลขบัตรประจำตัวประชาชน " + $P{cid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="40" width="130" height="15" uuid="ff7c5e88-ce1c-44a7-818c-bd2acf9a4546">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.tabStopWidth" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" markup="html">
+					<font fontName="THSarabunPSK" size="11"/>
+					<paragraph tabStopWidth="0"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{accNo}+"&nbsp;&nbsp;"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="55" width="130" height="15" uuid="0462b7f9-cebf-405b-8db2-6e043a8c8916">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" markup="html">
+					<font fontName="THSarabunPSK" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{lastPaymentDate}+"&nbsp;&nbsp;"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="70" width="130" height="15" uuid="51d554ab-6b22-46b0-a7da-62cdf755c637">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" markup="html">
+					<font fontName="THSarabunPSK" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{billDate}+"&nbsp;&nbsp;"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="430" y="40" width="124" height="15" uuid="c56d1957-6859-487b-b16b-c7f76f5ac793">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" markup="html">
+					<font fontName="THSarabunPSK" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalAmt}+"&nbsp;&nbsp;"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="430" y="55" width="124" height="15" uuid="e84c14e2-e08f-4559-81a5-e05b7d75df41">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" markup="html">
+					<font fontName="THSarabunPSK" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{balanceAmt}+"&nbsp;&nbsp;"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="430" y="70" width="124" height="15" uuid="2b7647d3-2010-4c1a-9e02-df38e53dee2d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" markup="html">
+					<font fontName="THSarabunPSK" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{tranDate}+"&nbsp;&nbsp;"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="101" width="270" height="15" uuid="1e79b77d-7140-40cf-9180-e1cada6a539c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="THSarabunPSK" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[รายการเรียกเก็บในงวดนี้]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="116" width="180" height="15" uuid="bc89d0e0-3ffe-418e-b4ac-2bdb284ad0ec">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="THSarabunPSK" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["   ยอดเงินต้นที่ครบกำหนดชำระ ณ " + $P{billDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="131" width="90" height="15" uuid="78298f04-0acc-465e-baee-3dce30e7b7bf">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.spacingAfter" value="px"/>
+					<property name="com.jaspersoft.studio.unit.tabStopWidth" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" markup="html">
+					<font fontName="THSarabunPSK" size="11"/>
+					<paragraph spacingAfter="0" tabStopWidth="0"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{balanceBillAmt}+"&nbsp;&nbsp;"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="146" width="90" height="15" uuid="dd51774e-45d5-490f-8f8a-61afac790b3a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" markup="html">
+					<font fontName="THSarabunPSK" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{newInterest}+"&nbsp;&nbsp;"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="161" width="90" height="15" uuid="964bdf02-3b20-47ad-94dc-787bf8ee8b79">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" markup="html">
+					<font fontName="THSarabunPSK" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{newLateCharge} +"&nbsp;&nbsp;"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="176" width="90" height="15" uuid="247ce9d2-929f-4234-9a9d-b6b73a9b2f4b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" markup="html">
+					<font fontName="THSarabunPSK" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fee} +"&nbsp;&nbsp;"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="191" width="90" height="15" uuid="94d3b8f6-cf58-4535-ad27-5846f2f1c2aa">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" markup="html">
+					<font fontName="THSarabunPSK" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{billAmount} +"&nbsp;&nbsp;"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="464" y="116" width="90" height="15" uuid="ab2254d2-5641-413c-9b66-453dab0ac83b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" markup="html">
+					<font fontName="THSarabunPSK" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nextDuePrin}+"&nbsp;&nbsp;"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="464" y="131" width="90" height="15" uuid="41bde137-810b-4124-ae01-b02962b8f3ae">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" markup="html">
+					<font fontName="THSarabunPSK" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nextDueInt}+"&nbsp;&nbsp;"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="464" y="146" width="90" height="15" uuid="8322eefb-246b-4f29-8a60-007d78159ee2">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" markup="html">
+					<font fontName="THSarabunPSK" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{payPerMonth}+"&nbsp;&nbsp;"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="464" y="161" width="90" height="15" uuid="d8ff7afb-7560-4a79-aa4b-68411659db52">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" markup="html">
+					<font fontName="THSarabunPSK" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fee} +"&nbsp;&nbsp;"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="464" y="176" width="90" height="15" uuid="45b31726-222b-4233-af8c-1d816d267fe7">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" markup="html">
+					<font fontName="THSarabunPSK" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalPayPerMonth}+"&nbsp;&nbsp;"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="284" y="191" width="270" height="15" uuid="6885c1ad-534d-4568-9e97-1d2e3f75f1d1">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="THSarabunPSK" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["   *กองทุนฯ จะคิดเบี้ยปรับ เมื่อมีเงินต้นค้างชำระในงวดปี " + $P{nextYear}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="116" width="90" height="15" uuid="fdd54144-2c91-4207-8b41-c76adbcd3551">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" markup="html">
+					<font fontName="THSarabunPSK" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{principleDue} +"&nbsp;&nbsp;"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="284" y="116" width="180" height="15" uuid="c4c02185-9f6d-4843-9f19-c49e80180ad9">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="THSarabunPSK" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["   ยอดเงินต้นที่ครบกำหนดชำระ ณ " + $P{nextBillDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="284" y="101" width="270" height="15" uuid="42bebbca-b856-4b20-a73b-9cc7bdfe6ce5">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="THSarabunPSK" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["รายการเรียกเก็บในงวดถัดไปชำระหนี้เป็นรายเดือน งวดปี " + $P{nextYear}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="8" y="210" width="546" height="15" uuid="8bf99190-7d1f-441b-a54a-7424bf2139eb">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="THSarabunPSK" size="11"/>
+				</textElement>
+				<text><![CDATA[*** ท่านสามารถดูรายละเอียดยอดหนี้ค้างชำระได้ที่  www.studentloan.or.th ***   (หากท่านชำระเงินดังกล่าวแล้ว กองทุนฯ ต้องขออภัยมา ณ ที่นี้ด้วย)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="8" y="225" width="35" height="15" uuid="12bb4f69-6f16-4449-b87a-9b51f1ab12d4">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="THSarabunPSK" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[หมายเหตุ : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="43" y="225" width="367" height="15" uuid="243035c0-4f59-40b5-a7f4-6f7c9842921a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="THSarabunPSK" size="9"/>
+				</textElement>
+				<text><![CDATA[1. ดอกเบี้ยและเบี้ยปรับคำนวณถึงวันก่อนครบกำหนดชำระเงิน 1 วัน กรณีที่ท่านชำระเงินก่อนวันครบกำหนดชำระ จำนวนเงินที่ท่านชำระจะนำมาลดเงินต้น]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="43" y="240" width="367" height="15" uuid="3f01c315-ddb3-4e96-a2df-395bea44e79b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="THSarabunPSK" size="9"/>
+				</textElement>
+				<text><![CDATA[2. กรณีที่ท่านไม่ได้ชำระเงินที่ ธนาคารกรุงไทย  ท่านจะเสียค่าบริการเพิ่มเติม ณ จุดชำระเงิน ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="43" y="255" width="367" height="15" uuid="f17977e0-e388-4351-8d08-a7fbf6299d53">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="THSarabunPSK" size="9"/>
+				</textElement>
+				<text><![CDATA[3. ท่านสามารถตรวจสอบรายการลดหนี้ได้หลังจากวันที่ท่านชำระเงินอย่างน้อย 5 วันทำการ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="43" y="270" width="197" height="15" uuid="f8d871cb-1dc7-400c-8043-713d3578b498">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="THSarabunPSK" size="9"/>
+				</textElement>
+				<text><![CDATA[4. กรณีที่ท่านเปลี่ยนแปลงที่อยู่ในการติดต่อ กรุณากรอกข้อความด้านหลัง แล้วส่งที่]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="240" y="270" width="170" height="15" uuid="6ad81872-66ab-4440-8c63-73e838e5f755">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="THSarabunPSK" size="9" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[ธนาคารกรุงไทย สาขาใดก็ได้]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="43" y="285" width="367" height="15" uuid="e7d21b69-38cf-4716-b426-14058630e439">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="THSarabunPSK" size="9"/>
+				</textElement>
+				<text><![CDATA[5. กรณีมีข้อสงสัย ท่านสามารถสอบถามข้อมูลเพิ่มเติมได้ที่ www.studentloan.or.th หรือ โทร.02-016-4888 และทาง LINE (บัญชีทางการ)]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="60" height="40" uuid="9e9ced62-9aca-4630-827f-c5bcb5c25322"/>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="0" y="348" width="80" height="60" uuid="dfcc2b5e-f1ab-4914-bbc5-fbb11cf5db75"/>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="414" y="225" width="59" height="60" uuid="a11d7eea-f029-40ba-a5fd-959d88827fda"/>
+				<imageExpression><![CDATA[$P{qr}]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="488" y="225" width="62" height="60" uuid="88d073c4-1f2a-428c-9307-01a6d2417883"/>
+				<imageExpression><![CDATA[$P{qrpay}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="413" y="285" width="60" height="15" uuid="0d09cb9c-6aaa-417f-846c-20725716d80d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="THSarabunPSK" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[QR CODE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="413" y="300" width="60" height="15" uuid="be2e56c7-1ac8-4b9d-b233-7ec0372d5cc2">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="THSarabunPSK" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Line: @กยศ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="488" y="285" width="62" height="15" uuid="df2e733b-6117-4fdc-9e45-6a4ff6b991ef">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="THSarabunPSK" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[QR CODE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="473" y="300" width="80" height="15" uuid="20ec687d-d2af-4dda-b5e9-e3f104dd6efc">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font fontName="THSarabunPSK" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Line: @กยศ หักเงินเดือน]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="320" width="554" height="1" uuid="da42a40d-89a2-456f-ac44-19c3434c797f"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="464" y="328" width="90" height="20" uuid="f5c0d28a-2c4b-4bb0-b9e6-1824c41a8e00"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="THSarabunPSK" size="12"/>
+				</textElement>
+				<text><![CDATA[(สำหรับช่องทางชำระเงิน)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="348" width="190" height="16" uuid="a2b9d96e-130e-442f-8a6f-5b533d4f7e32">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="THSarabunPSK" size="12"/>
+				</textElement>
+				<text><![CDATA[แบบฟอร์มการชำระเงิน (Pay-in Slip)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="270" y="348" width="140" height="16" uuid="aa4abcab-47ba-41a0-bd99-555bb92030b6">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="THSarabunPSK" size="12"/>
+				</textElement>
+				<text><![CDATA[Service Code: ……………………………………]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="411" y="348" width="142" height="16" uuid="8379f599-c311-4924-b81b-47a3f0a5e494">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="THSarabunPSK" size="12"/>
+				</textElement>
+				<text><![CDATA[วันที่ .................................................]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="364" width="190" height="16" uuid="de4cbef6-2855-4706-9488-a438fe3796bb"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="THSarabunPSK" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["กองทุนเงินให้กู้ยืมเพื่อการศึกษา " + $P{loanTypeName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="270" y="364" width="180" height="16" uuid="f342a3e8-805a-4e33-9f27-7e019462b897">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="THSarabunPSK" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["ชื่อผู้กู้ยืมเงิน : " + $P{stuName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="284" y="131" width="180" height="15" uuid="346de9e4-a002-4dcc-9764-cac4eec1f80a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="THSarabunPSK" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["   ดอกเบี้ย ถึงวันครบกำหนดชำระหนี้ปี  " + $P{nextYear}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="450" y="364" width="103" height="20" uuid="8941477f-d77f-40e9-b3db-e76664216f61"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="THSarabunPSK" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ยอดเงินรวมที่ต้องชำระ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="380" width="190" height="16" uuid="77ae9947-b895-435e-b7e2-98835c71fe70"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="THSarabunPSK" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["เลขบัตรประจำตัวประชาชน " + $P{cid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="270" y="380" width="140" height="16" uuid="da1bdd77-749b-4f0c-8f4b-9f74b2c1a14d"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="THSarabunPSK" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["เลขที่บัญชีเงินกู้ : " + $P{accNo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="384" width="144" height="20" uuid="76a2240e-bc0e-47d3-a57e-5fcda240786a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="THSarabunPSK" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{billAmount}+" บาท"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="80" y="396" width="186" height="16" uuid="e8f5d528-1823-41d1-8767-89f4a84f03c3">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="THSarabunPSK" size="12" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[ช่องทางการชำระเงิน]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="120" y="412" width="150" height="15" uuid="906b6258-1bb2-4fb9-a030-3055a200b9df">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="THSarabunPSK" size="11"/>
+				</textElement>
+				<text><![CDATA[ธนาคารกรุงไทย ]]></text>
+			</staticText>
+			<image>
+				<reportElement x="99" y="412" width="16" height="15" uuid="0065a352-3189-4a34-a330-57926d4f5edc">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{ktbIcon}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="120" y="429" width="150" height="15" uuid="e724c084-f06a-4b44-b849-c2447d6e5d57">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="THSarabunPSK" size="11"/>
+				</textElement>
+				<text><![CDATA[ที่ทำการไปรษณีย์ / POST OFFICE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="120" y="446" width="150" height="15" uuid="9b0bb525-28cb-4356-ad9d-3fbf726341a6">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="THSarabunPSK" size="11"/>
+				</textElement>
+				<text><![CDATA[เคาน์เตอร์เซอร์วิส / COUNTER SERVICE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="120" y="463" width="150" height="15" uuid="051a73c3-921b-4624-9849-6532c78a55c0">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="THSarabunPSK" size="11"/>
+				</textElement>
+				<text><![CDATA[ธนาคารกรุงศรีอยุธยา]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="120" y="479" width="150" height="15" uuid="1ac2cca5-b552-4a1d-bfdc-1011f92e964e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="THSarabunPSK" size="11"/>
+				</textElement>
+				<text><![CDATA[ธนาคารกรุงเทพ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="369" y="412" width="150" height="15" uuid="b47de515-13f6-4ab9-87db-4a15dbd5893e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="THSarabunPSK" size="11"/>
+				</textElement>
+				<text><![CDATA[ธนาคารแลนด์ แอนด์ เฮ้าส์]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="369" y="429" width="150" height="15" uuid="fac61015-4f7e-4021-a1bb-5ef6f1943a8c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="THSarabunPSK" size="11"/>
+				</textElement>
+				<text><![CDATA[ธนาคารทหารไทย]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="369" y="446" width="150" height="15" uuid="b4be0820-3319-4d69-b46a-21a14a7b8dc6">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="THSarabunPSK" size="11"/>
+				</textElement>
+				<text><![CDATA[ธนาคารไทยพาณิชย์]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="369" y="463" width="150" height="15" uuid="1508617a-a065-4283-9f0e-ecbded455229">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="THSarabunPSK" size="11"/>
+				</textElement>
+				<text><![CDATA[ธนาคารเพื่อการเกษตรและสหกรณ์การเกษตร]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="369" y="479" width="150" height="15" uuid="99934e09-f951-4672-90d8-5633c09b6a23">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="THSarabunPSK" size="11"/>
+				</textElement>
+				<text><![CDATA[ธนาคารกสิกรไทย]]></text>
+			</staticText>
+			<image>
+				<reportElement x="92" y="429" width="23" height="14" uuid="ab3498a5-8076-4a4c-a8ea-8d906df0d60b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{thailandpostIcon}]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="83" y="446" width="12" height="13" uuid="b84d5675-ef77-411c-aee8-eec2e14a0392">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{sevenEveIcon}]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="98" y="446" width="17" height="13" uuid="b5cc6d1c-1088-42c3-b7c7-6e06f7bd108b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{counterserviceIcon}]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="100" y="463" width="15" height="15" uuid="4dcffd20-8c4c-4bb2-bead-4dc301ab996e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{bayIcon}]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="100" y="479" width="15" height="15" uuid="127ea6d7-eefd-47c8-b213-d33bd8442477">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{bkbIcon}]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="348" y="412" width="15" height="15" uuid="ba90fc6a-f2ca-4aff-8141-be71774cd1e2">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{lhIcon}]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="343" y="429" width="20" height="15" uuid="b966a97f-7c63-4ae3-a7a6-450fb566d43a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{tmbIcon}]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="343" y="446" width="22" height="15" uuid="da0371ea-f944-4b15-a894-9b636cd55999">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{scbIcon}]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="348" y="463" width="15" height="15" uuid="8560e125-ebd4-443b-bcec-8d2d0fd62a37">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{baacIcon}]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="347" y="479" width="15" height="15" uuid="33bec9d0-0c2d-4216-bb99-e99889fbaae7">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{kbankIcon}]]></imageExpression>
+			</image>
+			<componentElement>
+				<reportElement x="69" y="530" width="335" height="40" uuid="11dad77c-f793-49dd-8181-7d6ed1272323"/>
+				<jr:Code128 xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" textPosition="bottom">
+					<jr:codeExpression><![CDATA[$P{barcode}]]></jr:codeExpression>
+				</jr:Code128>
+			</componentElement>
+			<staticText>
+				<reportElement x="404" y="530" width="150" height="20" uuid="4c6506b5-878f-4ff2-b463-aa173895e222"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="THSarabunPSK" size="12"/>
+				</textElement>
+				<text><![CDATA[ชื่อผู้ชำระเงิน…………………………………………]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="404" y="550" width="150" height="20" uuid="b44fff36-8f97-4135-bcdb-f86931bccc67"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="THSarabunPSK" size="12"/>
+				</textElement>
+				<text><![CDATA[เบอร์โทรศัพท์………………………………………..]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="580" width="554" height="1" uuid="bb8380f7-dfc1-41fc-abb7-7088a3195f2c"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<image>
+				<reportElement x="1" y="595" width="60" height="40" uuid="a4dc35ce-021d-4d16-bda7-a4c517baa5cf">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{logo}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="61" y="595" width="492" height="20" uuid="bb6a0624-2852-4b62-90a9-d384dddd8f8b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="THSarabunPSK" size="14"/>
+				</textElement>
+				<text><![CDATA[ท่านสามารถชำระหนี้ ผ่าน QR Code โดยไม่เสียค่าธรรมเนียมได้ ดังนี้]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="61" y="615" width="149" height="20" uuid="b775e2f7-7400-4c9f-bec0-7b19d7d11a44">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="THSarabunPSK" size="14" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[1.สำหรับชำระหนี้ผ่าน KTB netbank]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="60" y="762" width="206" height="20" uuid="f8329a13-848d-4138-a644-305002317bc3">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="THSarabunPSK" size="14" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[2.สำหรับชำระหนี้ผ่าน Mobile Banking ทุกธนาคาร]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="60" y="782" width="483" height="20" uuid="c81151e8-b720-424d-9025-f14c3f4256ba"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="THSarabunPSK" size="14"/>
+				</textElement>
+				<text><![CDATA[ยอดหนี้ได้ที่ www.studentloan.ktb.co.th หรือ www.studentloan.or.th ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="210" y="615" width="343" height="20" uuid="37ef98de-1eb0-4023-9b0f-f3cf55afe7ba">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="THSarabunPSK" size="14" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[ท่านสามารถสแกน QR Code ใส่หมายเลขบัตรประชาชน และระบุตัวเงิน]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="61" y="635" width="149" height="20" uuid="f761b0d8-43f9-4ff0-822d-87d44a947075">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="THSarabunPSK" size="14" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[ที่ต้องชำระผ่าน QR Code ด้านล่างนี้]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="266" y="762" width="67" height="20" uuid="be98c7cf-4a09-43b3-bbc7-48694e3c228c">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="THSarabunPSK" size="14"/>
+				</textElement>
+				<text><![CDATA[ท่านสามารถสร้าง]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="333" y="762" width="42" height="20" uuid="a45e7741-a4aa-40b9-9726-2d82bf05b4d0">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="THSarabunPSK" size="14" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[QR Code]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="375" y="762" width="178" height="20" uuid="fc41390f-be02-4947-9408-c83413696761">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="THSarabunPSK" size="14"/>
+				</textElement>
+				<text><![CDATA[ขึ้นใหม่ทุกครั้งเพื่อชำระเงินผ่านระบบตรวจสอบ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="40" width="150" height="15" uuid="cafec1ac-d9db-408d-8193-d56ee2e2dfa9">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="THSarabunPSK" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["   เลขที่บัญชีเงินกู้ "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="55" width="150" height="15" uuid="a33bf250-e3a3-423f-b6e7-6563c80e1dfa">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="THSarabunPSK" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["   วันที่ชำระครั้งล่าสุด"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="70" width="150" height="15" uuid="3556f070-09a8-46d8-bedc-ec2f262893f6">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="THSarabunPSK" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["   กรุณาชำระเงินภายในวันที่"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="40" width="150" height="15" uuid="dab01890-1b0e-4454-945b-ec8ab7f25097">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="THSarabunPSK" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["   ยอดหนี้เงินกู้"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="55" width="150" height="15" uuid="1b454fca-99e0-4705-9e54-2171b5729f23">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="THSarabunPSK" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["   ยอดหนี้เงินต้นคงเหลือ ณ วันที่สรุปยอด"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="70" width="150" height="15" uuid="fb91da7f-8972-4645-9218-81d2ef5a4d9e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="THSarabunPSK" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["   วันที่สรุปยอด"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="131" width="180" height="15" uuid="7c613d8d-90ae-4fae-a4f0-12399a49591b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="THSarabunPSK" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["   ยอดเงินต้นค้างชำระ"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="146" width="180" height="15" uuid="1a59c782-a251-4c2a-a94c-15de6b10a5ea">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="THSarabunPSK" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["   ดอกเบี้ย"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="161" width="180" height="15" uuid="6f8f397b-ffd4-4385-bc46-61fcb92e65e3">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="THSarabunPSK" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["   เบี้ยปรับ"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="176" width="180" height="15" uuid="826ec1a7-0cac-4b54-af6c-ecc63ab14298">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="THSarabunPSK" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["   ค่าทำเนียมการชำระหนี้"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="191" width="180" height="15" uuid="5f24e208-3a68-499c-8cbd-071f6458a37d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="THSarabunPSK" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["   ยอดหนี้รวมที่ต้องชำระ"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="284" y="146" width="180" height="15" uuid="726b8fb9-11c5-430f-9dd8-2a0640bbd5d6">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="THSarabunPSK" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["   ยอดชำระหนี้ต่อเดือน"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="284" y="161" width="180" height="15" uuid="5f2245df-720a-4040-81b8-375b06b14d28">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="THSarabunPSK" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["   ค่าธรรมเนียมการชำระหนี้"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="284" y="176" width="180" height="15" uuid="b930a904-f505-491c-9775-87a394b076ba">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="THSarabunPSK" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["   รวมเงินที่ต้องชำระรายเดือน"]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement x="214" y="635" width="171" height="122" uuid="f5bf25f8-2967-4e4e-bfa2-7879a3275e1c"/>
+				<jr:QRCode xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<jr:codeExpression><![CDATA[$P{qrtext}]]></jr:codeExpression>
+				</jr:QRCode>
+			</componentElement>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" x="120" y="496" width="150" height="15" uuid="2750ef25-a623-4413-84b7-32e5b7345de1">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="THSarabunPSK" size="11"/>
+				</textElement>
+				<text><![CDATA[เคาน์เตอร์บิ๊กซีทุกสาขา]]></text>
+			</staticText>
+			<image>
+				<reportElement x="104" y="496" width="15" height="15" uuid="f0e08365-5bfa-43b1-a5ec-44ae52823c00">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{bigcIcon}]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+</jasperReport>

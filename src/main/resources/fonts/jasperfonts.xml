@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fontFamilies>
+    <fontFamily name="THSarabunPSK">
+        <normal><![CDATA[fonts/THSarabunNew.ttf]]></normal>
+        <bold><![CDATA[fonts/THSarabunNewBold.ttf]]></bold>
+        <italic><![CDATA[fonts/THSarabunNewItalic.ttf]]></italic>
+        <boldItalic><![CDATA[fonts/THSarabunNewBoldItalic.ttf]]></boldItalic>
+        <pdfEncoding><![CDATA[Identity-H]]></pdfEncoding>
+        <pdfEmbedded><![CDATA[true]]></pdfEmbedded>
+    </fontFamily>
+	<fontFamily name="SansSerif">
+        <normal><![CDATA[fonts/DejaVuSansMono.ttf]]></normal>
+        <bold><![CDATA[fonts/DejaVuSansMono-Bold.ttf]]></bold>
+        <italic><![CDATA[fonts/DejaVuSansMono-Oblique.ttf]]></italic>
+        <boldItalic><![CDATA[fonts/DejaVuSansMono-BoldOblique.ttf]]></boldItalic>
+        <pdfEncoding><![CDATA[Identity-H]]></pdfEncoding>
+        <pdfEmbedded><![CDATA[true]]></pdfEmbedded>
+    </fontFamily>
+</fontFamilies>

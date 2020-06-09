@@ -1,0 +1,38 @@
+spring:
+  profiles.active: developer
+  application:
+    name: Internal Content Mobile Application - Batch
+
+db:
+  schema: LMDBA
+
+server:
+  port: 8080
+  servlet:    context-path: /spring-boot-api
+    
+proxy:
+  host: dynamicproxy.ktb
+  port: 8085
+  username: lmsproxy #SMERMAlert_Prod = prod ,  #lmsproxy = uat
+  password: nNa5zn83 #msPP3LkS = prod, #nNa5zn83 = uat
+  non: localhost|127.0.0.1|10.2.1.251|wcm-target.intranet.ktb|www.search.ktb|10.1.215.42
+
+---
+
+spring:
+  profiles: developer
+  jpa:
+    show-sql: false
+    generate-ddl: false
+spring.datasource:
+   driverClassName: oracle.jdbc.OracleDriver
+   url: jdbc:oracle:thin:@10.212.230.62:1752/DSLCORP
+   username: dsladm
+   password: DSLADM#2019
+   hikari:
+      idle-timeout: 10000
+      connection-timeout: 60000
+      maximum-pool-size: 100
+      minimum-idle: 20
+      
+      
