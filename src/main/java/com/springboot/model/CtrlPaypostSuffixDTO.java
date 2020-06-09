@@ -1,4 +1,4 @@
-package com.dsl.model;
+package com.springboot.model;
 
 public class CtrlPaypostSuffixDTO {
 

@@ -1,4 +1,4 @@
-package com.dsl.core.config;
+package com.springboot.core.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

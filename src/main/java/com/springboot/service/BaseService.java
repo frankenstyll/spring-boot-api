@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.dsl.service;
+package com.springboot.service;
 
 public abstract class BaseService {
 

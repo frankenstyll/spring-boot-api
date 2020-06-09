@@ -1,4 +1,4 @@
-package com.dsl.controller;
+package com.springboot.controller;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.dsl.model.PostDueDateDebtDTO;
 import com.google.gson.Gson;
+import com.springboot.model.PostDueDateDebtDTO;
 
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;

@@ -1,4 +1,4 @@
-package com.dsl.repository;
+package com.springboot.repository;
 
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
@@ -12,8 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
-import com.dsl.util.CollectionUtil;
-import com.dsl.util.StringUtil;
+import com.springboot.util.CollectionUtil;
+import com.springboot.util.StringUtil;
 
 /**
  * Add Spring JDBCTemplate support

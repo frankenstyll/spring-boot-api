@@ -9,7 +9,7 @@
 		<version>2.2.1.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.dsl</groupId>
+	<groupId>com.springboot</groupId>
 	<artifactId>spring-boot-api-template</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>spring-boot-api-template</name>

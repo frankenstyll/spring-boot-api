@@ -1,4 +1,4 @@
-package com.dsl.controller;
+package com.springboot.controller;
 
 import java.io.ByteArrayOutputStream;
 import java.util.HashMap;
@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.dsl.model.PostDueDateDebtDTO;
-import com.dsl.service.BatchInvoiceServiceImpl;
+import com.springboot.model.PostDueDateDebtDTO;
+import com.springboot.service.BatchInvoiceServiceImpl;
 
 import net.sf.jasperreports.engine.JREmptyDataSource;
 import net.sf.jasperreports.engine.JasperCompileManager;
